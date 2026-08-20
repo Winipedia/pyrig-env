@@ -40,6 +40,43 @@
 
 ---
 
-> Add your description here
+> A pyrig plugin that contributes a .env file.
 
 ---
+
+## Overview
+
+Drop-in [pyrig](https://github.com/Winipedia/pyrig) plugin that gives your
+project a managed `.env` file for local environment variables and secrets:
+
+- Creates an empty `.env` file if one is missing, and never reads or rewrites
+  it afterward — you own its contents entirely.
+- Excludes `.env` from version control automatically, so secrets are never
+  committed.
+
+No configuration required — installing the package as a development dependency
+is the whole setup. Then regenerate your pyrig configs as usual and the
+plugin's config file is picked up automatically.
+
+## Installation
+
+```bash
+uv add pyrig-env --dev
+uv run pyrig sync
+```
+
+## How it works
+
+The plugin subclasses one pyrig base class:
+
+- `DictConfigFile` (as `EnvConfigFile`) to declare the project's `.env` file.
+  pyrig's cross-package subclass discovery finds this config during `sync`
+  and creates an empty `.env` if it does not already exist. `_load()` and
+  `_dump()` are overridden to refuse to read or write real content, and
+  `is_correct()` is overridden to check only for the file's existence, so its
+  contents are never touched once created.
+
+## API Reference
+
+For class- and method-level details, see the [API Reference](api.md), generated
+automatically from the source.

@@ -40,6 +40,32 @@
 
 ---
 
-> Add your description here
+> A pyrig plugin that contributes a .env file.
 
 ---
+
+## Overview
+
+pyrig-env is a [pyrig](https://github.com/Winipedia/pyrig) plugin that ensures
+every project has an empty `.env` file for local environment variables and
+secrets, excluded from version control so nothing sensitive is ever committed.
+
+## What it adds
+
+- **A managed `.env` file** — `pyrig sync` creates an empty `.env` file if one
+  is missing. Its content is never read or overwritten afterward, so you are
+  free to populate and maintain it by hand.
+- **Version-control exclusion** — `.env` is automatically treated as
+  git-ignored, so secrets placed in it are never committed.
+
+## Usage
+
+```bash
+uv add pyrig-env --dev
+uv run pyrig sync
+```
+
+## Documentation
+
+Full documentation, including the auto-generated API reference, is available on
+the [documentation site](https://Winipedia.github.io/pyrig-env).

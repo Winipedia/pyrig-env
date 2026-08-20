@@ -1,7 +1,7 @@
 [project]
 name = "pyrig-env"
 version = "0.1.0"
-description = "Add your description here"
+description = "A pyrig plugin that contributes a .env file."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
@@ -26,6 +26,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
+  "pyrig>=18.58.2",
   "pyrig-runtime>=3.23.9",
 ]
 
@@ -49,6 +50,7 @@ dev = [
   "prek>=0.4.14",
   "pyrig>=18.58.2",
   "pyrig-codecov>=3.16.43",
+  "pyrig-fixtures>=2.24.28",
   "pyrig-pypi>=3.19.2",
   "pytest>=9.1.1",
   "pytest-cov>=7.1.0",

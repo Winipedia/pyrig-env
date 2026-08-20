@@ -1,6 +1,6 @@
 [project]
 site_name = "pyrig-env"
-site_description = "Add your description here"
+site_description = "A pyrig plugin that contributes a .env file."
 site_url = "https://Winipedia.github.io/pyrig-env"
 repo_url = "https://github.com/Winipedia/pyrig-env"
 edit_uri = "edit/main/docs"

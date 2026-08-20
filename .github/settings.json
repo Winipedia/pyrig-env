@@ -1,7 +1,7 @@
 {
   "repository": {
     "name": "pyrig-env",
-    "description": "Add your description here",
+    "description": "A pyrig plugin that contributes a .env file.",
     "homepage": "https://Winipedia.github.io/pyrig-env",
     "default_branch": "main",
     "delete_branch_on_merge": true,
