@@ -1,6 +1,6 @@
 [project]
 name = "pyrig-env"
-version = "1.0.29"
+version = "1.0.31"
 description = "A pyrig plugin that contributes a .env file."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -26,8 +26,8 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "pyrig>=18.58.2",
-  "pyrig-runtime>=3.23.9",
+  "pyrig>=18.85.1",
+  "pyrig-runtime>=3.23.45",
 ]
 
 [project.urls]
@@ -42,32 +42,32 @@ pyrig-env = "pyrig_runtime.rig.cli.main:main"
 
 [dependency-groups]
 dev = [
-  "actionlint-py>=1.7.12.24",
+  "actionlint-py>=1.7.12.25",
   "bandit>=1.9.4",
   "deptry>=0.25.1",
   "detect-secrets>=1.5.0",
   "mkdocstrings[python]>=1.0.6",
   "pre-commit-hooks>=6.0.0",
-  "prek>=0.4.14",
+  "prek>=0.5.3",
   "pyflakes>=3.4.0",
-  "pyrig>=18.58.2",
-  "pyrig-codecov>=3.16.43",
-  "pyrig-fixtures>=2.24.28",
-  "pyrig-pypi>=3.19.2",
+  "pyrig>=18.85.1",
+  "pyrig-codecov>=3.17.31",
+  "pyrig-fixtures>=2.24.59",
+  "pyrig-pypi>=3.20.28",
   "pytest>=9.1.1",
   "pytest-cov>=7.1.0",
-  "pytest-randomly>=4.1.0",
+  "pytest-randomly>=5.0.0",
   "pytest-xdist>=3.8.0",
-  "ruff>=0.16.4",
-  "rumdl>=0.2.58",
-  "ryl>=0.21.0",
+  "ruff>=0.16.8",
+  "rumdl>=0.2.75",
+  "ryl>=0.22.0",
   "shellcheck-py>=0.11.0.1",
-  "shfmt-py>=4.0.0",
-  "tombi>=1.4.1",
-  "ty>=0.0.73",
-  "typos>=1.49.0",
-  "zensical>=0.0.56",
-  "zizmor>=1.30.0",
+  "shfmt-py>=4.2.0",
+  "tombi>=1.5.5",
+  "ty>=0.0.83",
+  "typos>=1.50.2",
+  "zensical>=0.0.64",
+  "zizmor>=1.30.1",
 ]
 
 [build-system]
