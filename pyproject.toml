@@ -1,6 +1,6 @@
 [project]
 name = "pyrig-env"
-version = "1.0.51"
+version = "1.0.52"
 description = "A pyrig plugin that contributes a .env file."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -119,3 +119,7 @@ select = [
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.ryl.rules]
+ALL = "enable"
+key-ordering = "disable"
