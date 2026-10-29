@@ -1,7 +1,7 @@
 """Configuration for the target project's `.env` file."""
 
 from pathlib import Path
-from typing import Any
+from typing import Any, override
 
 from pyrig.rig.configs.base.config_file import DictConfigFile
 
@@ -15,10 +15,42 @@ class EnvConfigFile(DictConfigFile):
     version control so those secrets are never committed.
     """
 
+    @override
+    def extension(self) -> str:
+        """Return `""`, since `.env` has no extension."""
+        return ""
+
+    @override
+    def extension_separator(self) -> str:
+        """Return `""`, so the stem is not followed by a trailing dot."""
+        return ""
+
+    @override
+    def is_correct(self) -> bool:
+        """Return whether `.env` exists, without loading its content."""
+        return self.path().exists()
+
+    @override
+    def parent_path(self) -> Path:
+        """Return the project root as the parent directory."""
+        return Path()
+
+    @override
+    def stem(self) -> str:
+        """Return `".env"`."""
+        return ".env"
+
+    @override
+    def version_control_ignored(self) -> bool:
+        """Return `True`; `.env` is always excluded from version control."""
+        return True
+
+    @override
     def _configs(self) -> dict[str, Any]:
         """Return an empty dict, since no `.env` content is required."""
         return {}
 
+    @override
     def _dump(self, configs: dict[str, Any]) -> None:
         """Refuse to write non-empty content to `.env`; no-op for an empty dict.
 
@@ -33,6 +65,7 @@ class EnvConfigFile(DictConfigFile):
         msg = f"""cannot dump to {self}"""
         raise ValueError(msg)
 
+    @override
     def _load(self) -> dict[str, str | None]:
         """Refuse to load `.env` content.
 
@@ -41,27 +74,3 @@ class EnvConfigFile(DictConfigFile):
         """
         msg = f"{self} should never be loaded."
         raise RuntimeError(msg)
-
-    def extension(self) -> str:
-        """Return `""`, since `.env` has no extension."""
-        return ""
-
-    def extension_separator(self) -> str:
-        """Return `""`, so the stem is not followed by a trailing dot."""
-        return ""
-
-    def is_correct(self) -> bool:
-        """Return whether `.env` exists, without loading its content."""
-        return self.path().exists()
-
-    def parent_path(self) -> Path:
-        """Return the project root as the parent directory."""
-        return Path()
-
-    def stem(self) -> str:
-        """Return `".env"`."""
-        return ".env"
-
-    def version_control_ignored(self) -> bool:
-        """Return `True`; `.env` is always excluded from version control."""
-        return True
