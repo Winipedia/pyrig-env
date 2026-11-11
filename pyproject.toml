@@ -1,6 +1,6 @@
 [project]
 name = "pyrig-env"
-version = "1.1.74"
+version = "1.1.75"
 description = "A pyrig plugin that contributes a .env file."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -27,7 +27,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "pyrig>=19.2.0",
+  "pyrig>=19.29.0",
 ]
 
 [project.urls]
